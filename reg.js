@@ -19,16 +19,16 @@ email.addEventListener("input", function(e) {
 })
 
 UserName.addEventListener("input", function(e) {
-    let pattern = /^[A-Z]/;
-    let inValue = e.target.value;
+    let pattern = /^[A-Z][^\W_]+$/;
+    let inValueUsername = e.target.value;
 
-    console.log(pattern.test(inValue))
+    console.log(pattern.test(inValueUsername))
 
-    let valid = pattern.test(inValue);
+    let validUsername = pattern.test(inValueUsername);
 
     
 
-    if(valid) {
+    if(validUsername) {
         usernameError.style.display = 'none'
     } else {
         usernameError.style.display = 'block'
